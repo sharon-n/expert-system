@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Expert System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Startup Expert System</h1>
+        <div>
+            <a href="login.php" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Login</a>
+            <a href="register.php" class="ml-2 px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center py-16">
+        <h2 class="text-4xl font-bold">Empowering Startups with Expert Insights</h2>
+        <p class="text-gray-600 mt-4">Get tailored recommendations to grow your business efficiently.</p>
+        <div class="mt-6">
+            <input type="text" placeholder="Search for startup advice..." class="px-4 py-2 w-2/3 max-w-lg border rounded-md">
+            <button class="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Search</button>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg cursor-pointer">
+            <h3 class="text-lg font-semibold">Business Planning</h3>
+            <p class="text-gray-600 mt-2">Structure your ideas into a solid business model.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg cursor-pointer">
+            <h3 class="text-lg font-semibold">Finance & Funding</h3>
+            <p class="text-gray-600 mt-2">Discover funding options and financial strategies.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg cursor-pointer">
+            <h3 class="text-lg font-semibold">Marketing & Sales</h3>
+            <p class="text-gray-600 mt-2">Reach the right audience and grow your revenue.</p>
+        </div>
+    </section>
+
+    <!-- Startup Tip of the Day -->
+    <section class="mt-12 text-center" x-data="{tips: ['Validate your idea before scaling.', 'Focus on customer needs, not just the product.', 'Keep costs low in the early stages.'], currentTip: 0 }" x-init="setInterval(() => currentTip = (currentTip + 1) % tips.length, 5000)">
+        <h3 class="text-xl font-semibold">Startup Tip of the Day</h3>
+        <p class="text-gray-700 mt-2" x-text="tips[currentTip]"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-gray-200 text-center p-4">
+        <p>&copy; 2025 Startup Expert System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
